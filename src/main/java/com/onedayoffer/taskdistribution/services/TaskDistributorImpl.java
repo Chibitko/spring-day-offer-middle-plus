@@ -39,6 +39,9 @@ public class TaskDistributorImpl implements TaskDistributor  {
 
             assert employee != null;
 
+            if (employee.getTotalLeadTime() + task.getLeadTime() > 420)
+                continue;
+
             employee.getTasks().add(task);
 
             employeePriority.remove(employee);
